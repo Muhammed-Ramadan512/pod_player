@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:universal_html/html.dart' as uni_html;
-import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../../pod_player.dart';
 import '../utils/logger.dart';
@@ -257,18 +256,15 @@ class PodGetXVideoController extends _PodGesturesController {
     podLog(_podVideoState.toString());
     switch (_podVideoState) {
       case PodVideoState.playing:
-        if (podPlayerConfig.wakelockEnabled) WakelockPlus.enable();
         playVideo(true);
         break;
       case PodVideoState.paused:
-        if (podPlayerConfig.wakelockEnabled) WakelockPlus.disable();
         playVideo(false);
         break;
       case PodVideoState.loading:
         isShowOverlay(true);
         break;
       case PodVideoState.error:
-        if (podPlayerConfig.wakelockEnabled) WakelockPlus.disable();
         playVideo(false);
         break;
     }
