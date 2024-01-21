@@ -32,24 +32,17 @@ class _PlayVideoFromVimeoIdState extends State<PlayVideoFromYoutube> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Youtube player')),
+      // appBar: AppBar(title: const Text('Youtube player')),
       body: SafeArea(
         child: Center(
-          child: ListView(
-            shrinkWrap: true,
-            children: [
-              PodVideoPlayer(
-                controller: controller,
-                videoThumbnail: const DecorationImage(
-                  image: NetworkImage(
-                    'https://images.unsplash.com/photo-1569317002804-ab77bcf1bce4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dW5zcGxhc2h8ZW58MHx8MHx8&w=1000&q=80',
-                  ),
-                  fit: BoxFit.cover,
-                ),
+          child: PodVideoPlayer(
+            controller: controller,
+            videoThumbnail: const DecorationImage(
+              image: NetworkImage(
+                'https://images.unsplash.com/photo-1569317002804-ab77bcf1bce4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dW5zcGxhc2h8ZW58MHx8MHx8&w=1000&q=80',
               ),
-              const SizedBox(height: 40),
-              _loadVideoFromUrl()
-            ],
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ),

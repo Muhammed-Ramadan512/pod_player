@@ -176,7 +176,7 @@ class _PodVideoController extends _PodUiController {
         ]);
       }
 
-      _enableFullScreenView(tag);
+      // _enableFullScreenView(tag);
       isFullScreen = true;
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         update(['full-screen']);
@@ -219,7 +219,7 @@ class _PodVideoController extends _PodUiController {
 
   void _exitFullScreenView(BuildContext context, String tag) {
     podLog('popped-full-screen');
-    Navigator.of(fullScreenContext).pop();
+    // Navigator.of(fullScreenContext).pop();
   }
 
   void _enableFullScreenView(String tag) {
